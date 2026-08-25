@@ -2,6 +2,7 @@ package com.appstore.backend.service.serviceImpl;
 
 import com.appstore.backend.service.AlmacenamientoService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @Service
+@Primary
 @Profile("prod")   // ← solo se activa cuando el perfil "prod" está activo
 public class AlmacenamientoSupabaseService implements AlmacenamientoService {
 
