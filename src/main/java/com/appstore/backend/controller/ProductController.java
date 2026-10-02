@@ -105,4 +105,9 @@ public class ProductController {
     public ResponseEntity<List<String>> listarColores() {
         return ResponseEntity.ok(productService.obtenerColoresDistintos());
     }
+
+    @GetMapping ("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("Service is running");
+    }
 }
