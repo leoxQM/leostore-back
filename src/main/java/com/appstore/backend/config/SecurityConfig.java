@@ -69,6 +69,8 @@ public class SecurityConfig {
 
                 .requestMatchers("/auth/register").hasRole("ADMIN")
 
+                .requestMatchers("/health").permitAll()
+
                 .anyRequest().authenticated()
             )
             .authenticationProvider(authenticationProvider())
