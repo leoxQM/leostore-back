@@ -55,9 +55,9 @@ public class SecurityConfig {
                 .requestMatchers("/auth/login").permitAll()
 
                 // Cualquiera puede VER productos (tienda pública)
+                .requestMatchers(HttpMethod.GET, "/api/appstore/health").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/appstore/productos/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/uploads/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/health").permitAll()
 
                 // Crear, editar, eliminar productos: solo ADMIN
                 .requestMatchers(HttpMethod.POST, "/api/appstore/productos/**").hasAnyRole("ADMIN","USER")
